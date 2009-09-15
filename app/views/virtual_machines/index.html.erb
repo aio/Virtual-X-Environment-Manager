@@ -4,6 +4,7 @@
     <th>Host Name</th>
     <th>Status</th>
     <th>IP Address</th>
+    <th>Action</th>
   </tr>
 <% @vms.each do |vm| %>
   <tr>
@@ -11,6 +12,17 @@
     <td><%= vm.hostname %></td>
     <td><%= vm.status %></td>
     <td><%= vm.ip_address %></td>
+    <td>
+    <% if vm.stopped? %>
+      <a href="/virtual_machines/start/<%= vm.vmid %>">Start</a>
+    <% elsif vm.running? %>
+       <a href="/virtual_machines/stop/<%= vm.vmid %>">Stop</a>
+    <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
+<br />
+<div>
+  <%= flash[:message] %>
+</div>

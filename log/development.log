@@ -125,3 +125,748 @@ ArgumentError (wrong number of arguments (4 for 0)):
     script/server:3
 
 Rendering /root/admin/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:08:08) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+
+
+ArgumentError (wrong number of arguments (4 for 0)):
+    /app/models/virtual_machine.rb:5:in `initialize'
+    /app/models/virtual_machine.rb:5:in `initialize'
+    /app/models/virtual_machine.rb:17:in `new'
+    /app/models/virtual_machine.rb:17:in `all'
+    /app/models/virtual_machine.rb:15:in `each'
+    /app/models/virtual_machine.rb:15:in `all'
+    /app/models/virtual_machine.rb:14:in `popen'
+    /app/models/virtual_machine.rb:14:in `all'
+    /app/controllers/virtual_machines_controller.rb:3:in `index'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /root/admin/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:09:31) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02600 (38 reqs/sec) | Rendering: 0.00256 (9%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:17:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02809 (35 reqs/sec) | Rendering: 0.00268 (9%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:20:12) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02690 (37 reqs/sec) | Rendering: 0.00304 (11%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#103 (for 172.31.0.119 at 2009-09-15 12:20:18) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"103", "id"=>"start", "controller"=>"virtual_machines"}
+
+
+ActionController::UnknownAction (No action responded to 103):
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /root/admin/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:21:15) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.03479 (28 reqs/sec) | Rendering: 0.00388 (11%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#start (for 172.31.0.119 at 2009-09-15 12:21:18) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"start", "id"=>"103", "controller"=>"virtual_machines"}
+
+
+NoMethodError (undefined method `find' for VirtualMachine:Class):
+    /app/controllers/virtual_machines_controller.rb:7:in `start'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /root/admin/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:24:55) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02787 (35 reqs/sec) | Rendering: 0.00306 (10%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#start (for 172.31.0.119 at 2009-09-15 12:24:58) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"start", "id"=>"103", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #12 of virtual_machines/index.html.erb:
+9:     <th>IP Address</th>
+10:     <th>Action</th>
+11:   </tr>
+12: <% @vms.each do |vm| %>
+13:   <tr>
+14:     <td><%= vm.vmid %></td>
+15:     <td><%= vm.hostname %></td>
+
+    app/views/virtual_machines/index.html.erb:12:in `_run_erb_47app47views47virtual_machines47index46html46erb'
+    vendor/rails/actionpack/lib/action_view/base.rb:338:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:338:in `execute'
+    vendor/rails/actionpack/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    vendor/rails/actionpack/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:35:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:22:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:245:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1108:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:865:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/base.rb:880:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:259:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    app/controllers/virtual_machines_controller.rb:10:in `start'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /root/admin/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:25:31) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIgJLAVN0YXJ0aW5nIGNvbnRhaW5lciAuLi4KQ29u
+dGFpbmVyIGlzIG1vdW50ZWQKU2V0dGluZyBDUFUgdW5pdHM6IDEwMDAKU2V0
+dGluZyBDUFVzOiAxCkNvbmZpZ3VyZSBtZW1pbmZvOiAzMjc2ODAKU2V0IGhv
+c3RuYW1lOiB0ZXN0c3J2LW5mc2VuLmFpby5sb2NhbApGaWxlIHJlc29sdi5j
+b25mIHdhcyBtb2RpZmllZApTZXR0aW5nIHF1b3RhIHVnaWRsaW1pdDogMApD
+b25maWd1cmUgdmV0aCBkZXZpY2VzOiB2ZXRoMTAzLjAgCkFkZGluZyBpbnRl
+cmZhY2UgdmV0aDEwMy4wIHRvIGJyaWRnZSB2bWJyMCBvbiBDVDAgZm9yIENU
+MTAzCkNvbnRhaW5lciBzdGFydCBpbiBwcm9ncmVzcy4uLgoGOgpAdXNlZHsG
+OwZG--d53928d4632f7a1cbe97b59d6fcfef8f29a90b8d
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.10044 (9 reqs/sec) | Rendering: 0.00169 (1%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines/]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:34:09) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIgJLAVN0YXJ0aW5nIGNvbnRhaW5lciAuLi4KQ29u
+dGFpbmVyIGlzIG1vdW50ZWQKU2V0dGluZyBDUFUgdW5pdHM6IDEwMDAKU2V0
+dGluZyBDUFVzOiAxCkNvbmZpZ3VyZSBtZW1pbmZvOiAzMjc2ODAKU2V0IGhv
+c3RuYW1lOiB0ZXN0c3J2LW5mc2VuLmFpby5sb2NhbApGaWxlIHJlc29sdi5j
+b25mIHdhcyBtb2RpZmllZApTZXR0aW5nIHF1b3RhIHVnaWRsaW1pdDogMApD
+b25maWd1cmUgdmV0aCBkZXZpY2VzOiB2ZXRoMTAzLjAgCkFkZGluZyBpbnRl
+cmZhY2UgdmV0aDEwMy4wIHRvIGJyaWRnZSB2bWJyMCBvbiBDVDAgZm9yIENU
+MTAzCkNvbnRhaW5lciBzdGFydCBpbiBwcm9ncmVzcy4uLgoGOgpAdXNlZHsG
+OwZU--a4d147b285c8e8d13670b282b2d41bcbd8c8baf2
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02705 (36 reqs/sec) | Rendering: 0.00302 (11%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines/]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:36:27) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02645 (37 reqs/sec) | Rendering: 0.00294 (11%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines/]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:37:16) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.03260 (30 reqs/sec) | Rendering: 0.00353 (10%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines/]
+
+
+Processing VirtualMachinesController#stop (for 172.31.0.119 at 2009-09-15 12:37:19) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"stop", "id"=>"103", "controller"=>"virtual_machines"}
+
+
+NoMethodError (undefined method `redirect' for #<VirtualMachinesController:0x7f748f238fb0>):
+    /app/controllers/virtual_machines_controller.rb:17:in `stop'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /root/admin/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:55:59) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIlhTdG9wcGluZyBjb250YWluZXIgLi4uPGJyIC8+
+Q29udGFpbmVyIHdhcyBzdG9wcGVkPGJyIC8+Q29udGFpbmVyIGlzIHVubW91
+bnRlZDxiciAvPgY6CkB1c2VkewY7BkY=--6e833734c4c77929497b286f7564874c351136fc
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02441 (40 reqs/sec) | Rendering: 0.00152 (6%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines/]
+
+
+Processing VirtualMachinesController#start (for 172.31.0.119 at 2009-09-15 12:56:10) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIlhTdG9wcGluZyBjb250YWluZXIgLi4uPGJyIC8+
+Q29udGFpbmVyIHdhcyBzdG9wcGVkPGJyIC8+Q29udGFpbmVyIGlzIHVubW91
+bnRlZDxiciAvPgY6CkB1c2VkewY7BlQ=--8fc8db749097ddbbeffe6977a00635a015c50b30
+  Parameters: {"action"=>"start", "id"=>"110", "controller"=>"virtual_machines"}
+
+
+NoMethodError (undefined method `redirect' for #<VirtualMachinesController:0x7f748fceb4a8>):
+    /app/controllers/virtual_machines_controller.rb:10:in `start'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:502:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /root/admin/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:56:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIgKSAVN0YXJ0aW5nIGNvbnRhaW5lciAuLi48YnIg
+Lz5Db250YWluZXIgaXMgbW91bnRlZDxiciAvPlNldHRpbmcgQ1BVIHVuaXRz
+OiAxMDAwPGJyIC8+U2V0dGluZyBDUFVzOiAxPGJyIC8+Q29uZmlndXJlIG1l
+bWluZm86IDM5MzIxNjxiciAvPlNldCBob3N0bmFtZTogeXVoYW8tdGVzdHNy
+di5haW8ubG9jYWw8YnIgLz4gRVJST1I6IENhbid0IGNoYW5nZSBmaWxlIC9l
+dGMvcmVzb2x2LmNvbmY8YnIgLz5GaWxlIHJlc29sdi5jb25mIHdhcyBtb2Rp
+ZmllZDxiciAvPkNvbmZpZ3VyZSB2ZXRoIGRldmljZXM6IHZldGgxMTAuMCA8
+YnIgLz5BZGRpbmcgaW50ZXJmYWNlIHZldGgxMTAuMCB0byBicmlkZ2Ugdm1i
+cjAgb24gQ1QwIGZvciBDVDExMDxiciAvPkNvbnRhaW5lciBzdGFydCBpbiBw
+cm9ncmVzcy4uLjxiciAvPgY6CkB1c2VkewY7BkY=--93fa2556166eb223262877fc282e1a9a8053bee0
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02670 (37 reqs/sec) | Rendering: 0.00142 (5%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines/]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:57:28) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIgKSAVN0YXJ0aW5nIGNvbnRhaW5lciAuLi48YnIg
+Lz5Db250YWluZXIgaXMgbW91bnRlZDxiciAvPlNldHRpbmcgQ1BVIHVuaXRz
+OiAxMDAwPGJyIC8+U2V0dGluZyBDUFVzOiAxPGJyIC8+Q29uZmlndXJlIG1l
+bWluZm86IDM5MzIxNjxiciAvPlNldCBob3N0bmFtZTogeXVoYW8tdGVzdHNy
+di5haW8ubG9jYWw8YnIgLz4gRVJST1I6IENhbid0IGNoYW5nZSBmaWxlIC9l
+dGMvcmVzb2x2LmNvbmY8YnIgLz5GaWxlIHJlc29sdi5jb25mIHdhcyBtb2Rp
+ZmllZDxiciAvPkNvbmZpZ3VyZSB2ZXRoIGRldmljZXM6IHZldGgxMTAuMCA8
+YnIgLz5BZGRpbmcgaW50ZXJmYWNlIHZldGgxMTAuMCB0byBicmlkZ2Ugdm1i
+cjAgb24gQ1QwIGZvciBDVDExMDxiciAvPkNvbnRhaW5lciBzdGFydCBpbiBw
+cm9ncmVzcy4uLjxiciAvPgY6CkB1c2VkewY7BlQ=--5c7142df1200ec6b54bbd47ff9971c2fd81e3fc2
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02709 (36 reqs/sec) | Rendering: 0.00304 (11%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines/]
+
+
+Processing VirtualMachinesController#stop (for 172.31.0.119 at 2009-09-15 12:57:33) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"stop", "id"=>"110", "controller"=>"virtual_machines"}
+Redirected to http://172.31.0.52:3000/virtual_machines
+Completed in 12.05592 (0 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://172.31.0.52/virtual_machines/stop/110]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:57:45) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIlhTdG9wcGluZyBjb250YWluZXIgLi4uPGJyIC8+
+Q29udGFpbmVyIHdhcyBzdG9wcGVkPGJyIC8+Q29udGFpbmVyIGlzIHVubW91
+bnRlZDxiciAvPgY6CkB1c2VkewY7BkY=--6e833734c4c77929497b286f7564874c351136fc
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02471 (40 reqs/sec) | Rendering: 0.00136 (5%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#start (for 172.31.0.119 at 2009-09-15 12:57:50) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIlhTdG9wcGluZyBjb250YWluZXIgLi4uPGJyIC8+
+Q29udGFpbmVyIHdhcyBzdG9wcGVkPGJyIC8+Q29udGFpbmVyIGlzIHVubW91
+bnRlZDxiciAvPgY6CkB1c2VkewY7BlQ=--8fc8db749097ddbbeffe6977a00635a015c50b30
+  Parameters: {"action"=>"start", "id"=>"103", "controller"=>"virtual_machines"}
+Redirected to http://172.31.0.52:3000/virtual_machines
+Completed in 0.36969 (2 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://172.31.0.52/virtual_machines/start/103]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:57:50) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIgKCAVN0YXJ0aW5nIGNvbnRhaW5lciAuLi48YnIg
+Lz5Db250YWluZXIgaXMgbW91bnRlZDxiciAvPlNldHRpbmcgQ1BVIHVuaXRz
+OiAxMDAwPGJyIC8+U2V0dGluZyBDUFVzOiAxPGJyIC8+Q29uZmlndXJlIG1l
+bWluZm86IDMyNzY4MDxiciAvPlNldCBob3N0bmFtZTogdGVzdHNydi1uZnNl
+bi5haW8ubG9jYWw8YnIgLz5GaWxlIHJlc29sdi5jb25mIHdhcyBtb2RpZmll
+ZDxiciAvPlNldHRpbmcgcXVvdGEgdWdpZGxpbWl0OiAwPGJyIC8+Q29uZmln
+dXJlIHZldGggZGV2aWNlczogdmV0aDEwMy4wIDxiciAvPkFkZGluZyBpbnRl
+cmZhY2UgdmV0aDEwMy4wIHRvIGJyaWRnZSB2bWJyMCBvbiBDVDAgZm9yIENU
+MTAzPGJyIC8+Q29udGFpbmVyIHN0YXJ0IGluIHByb2dyZXNzLi4uPGJyIC8+
+BjoKQHVzZWR7BjsGRg==--39f2964e9b76d6cc490c48fdbdbec5689982ab33
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.06963 (14 reqs/sec) | Rendering: 0.00146 (2%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#stop (for 172.31.0.119 at 2009-09-15 12:58:01) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIgKCAVN0YXJ0aW5nIGNvbnRhaW5lciAuLi48YnIg
+Lz5Db250YWluZXIgaXMgbW91bnRlZDxiciAvPlNldHRpbmcgQ1BVIHVuaXRz
+OiAxMDAwPGJyIC8+U2V0dGluZyBDUFVzOiAxPGJyIC8+Q29uZmlndXJlIG1l
+bWluZm86IDMyNzY4MDxiciAvPlNldCBob3N0bmFtZTogdGVzdHNydi1uZnNl
+bi5haW8ubG9jYWw8YnIgLz5GaWxlIHJlc29sdi5jb25mIHdhcyBtb2RpZmll
+ZDxiciAvPlNldHRpbmcgcXVvdGEgdWdpZGxpbWl0OiAwPGJyIC8+Q29uZmln
+dXJlIHZldGggZGV2aWNlczogdmV0aDEwMy4wIDxiciAvPkFkZGluZyBpbnRl
+cmZhY2UgdmV0aDEwMy4wIHRvIGJyaWRnZSB2bWJyMCBvbiBDVDAgZm9yIENU
+MTAzPGJyIC8+Q29udGFpbmVyIHN0YXJ0IGluIHByb2dyZXNzLi4uPGJyIC8+
+BjoKQHVzZWR7BjsGVA==--23720f97d52659d54f3a243fe872003fa1baf66a
+  Parameters: {"action"=>"stop", "id"=>"103", "controller"=>"virtual_machines"}
+Redirected to http://172.31.0.52:3000/virtual_machines
+Completed in 5.15172 (0 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://172.31.0.52/virtual_machines/stop/103]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:58:07) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIlhTdG9wcGluZyBjb250YWluZXIgLi4uPGJyIC8+
+Q29udGFpbmVyIHdhcyBzdG9wcGVkPGJyIC8+Q29udGFpbmVyIGlzIHVubW91
+bnRlZDxiciAvPgY6CkB1c2VkewY7BkY=--6e833734c4c77929497b286f7564874c351136fc
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02612 (38 reqs/sec) | Rendering: 0.00147 (5%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:59:21) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIlhTdG9wcGluZyBjb250YWluZXIgLi4uPGJyIC8+
+Q29udGFpbmVyIHdhcyBzdG9wcGVkPGJyIC8+Q29udGFpbmVyIGlzIHVubW91
+bnRlZDxiciAvPgY6CkB1c2VkewY7BlQ=--8fc8db749097ddbbeffe6977a00635a015c50b30
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02591 (38 reqs/sec) | Rendering: 0.00141 (5%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#start (for 172.31.0.119 at 2009-09-15 12:59:27) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"start", "id"=>"103", "controller"=>"virtual_machines"}
+Redirected to http://172.31.0.52:3000/virtual_machines
+Completed in 0.34597 (2 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://172.31.0.52/virtual_machines/start/103]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:59:27) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIgKCAVN0YXJ0aW5nIGNvbnRhaW5lciAuLi48YnIg
+Lz5Db250YWluZXIgaXMgbW91bnRlZDxiciAvPlNldHRpbmcgQ1BVIHVuaXRz
+OiAxMDAwPGJyIC8+U2V0dGluZyBDUFVzOiAxPGJyIC8+Q29uZmlndXJlIG1l
+bWluZm86IDMyNzY4MDxiciAvPlNldCBob3N0bmFtZTogdGVzdHNydi1uZnNl
+bi5haW8ubG9jYWw8YnIgLz5GaWxlIHJlc29sdi5jb25mIHdhcyBtb2RpZmll
+ZDxiciAvPlNldHRpbmcgcXVvdGEgdWdpZGxpbWl0OiAwPGJyIC8+Q29uZmln
+dXJlIHZldGggZGV2aWNlczogdmV0aDEwMy4wIDxiciAvPkFkZGluZyBpbnRl
+cmZhY2UgdmV0aDEwMy4wIHRvIGJyaWRnZSB2bWJyMCBvbiBDVDAgZm9yIENU
+MTAzPGJyIC8+Q29udGFpbmVyIHN0YXJ0IGluIHByb2dyZXNzLi4uPGJyIC8+
+BjoKQHVzZWR7BjsGRg==--39f2964e9b76d6cc490c48fdbdbec5689982ab33
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02986 (33 reqs/sec) | Rendering: 0.00190 (6%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#stop (for 172.31.0.119 at 2009-09-15 12:59:29) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIgKCAVN0YXJ0aW5nIGNvbnRhaW5lciAuLi48YnIg
+Lz5Db250YWluZXIgaXMgbW91bnRlZDxiciAvPlNldHRpbmcgQ1BVIHVuaXRz
+OiAxMDAwPGJyIC8+U2V0dGluZyBDUFVzOiAxPGJyIC8+Q29uZmlndXJlIG1l
+bWluZm86IDMyNzY4MDxiciAvPlNldCBob3N0bmFtZTogdGVzdHNydi1uZnNl
+bi5haW8ubG9jYWw8YnIgLz5GaWxlIHJlc29sdi5jb25mIHdhcyBtb2RpZmll
+ZDxiciAvPlNldHRpbmcgcXVvdGEgdWdpZGxpbWl0OiAwPGJyIC8+Q29uZmln
+dXJlIHZldGggZGV2aWNlczogdmV0aDEwMy4wIDxiciAvPkFkZGluZyBpbnRl
+cmZhY2UgdmV0aDEwMy4wIHRvIGJyaWRnZSB2bWJyMCBvbiBDVDAgZm9yIENU
+MTAzPGJyIC8+Q29udGFpbmVyIHN0YXJ0IGluIHByb2dyZXNzLi4uPGJyIC8+
+BjoKQHVzZWR7BjsGVA==--23720f97d52659d54f3a243fe872003fa1baf66a
+  Parameters: {"action"=>"stop", "id"=>"103", "controller"=>"virtual_machines"}
+Redirected to http://172.31.0.52:3000/virtual_machines
+Completed in 5.05284 (0 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://172.31.0.52/virtual_machines/stop/103]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 12:59:35) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIlhTdG9wcGluZyBjb250YWluZXIgLi4uPGJyIC8+
+Q29udGFpbmVyIHdhcyBzdG9wcGVkPGJyIC8+Q29udGFpbmVyIGlzIHVubW91
+bnRlZDxiciAvPgY6CkB1c2VkewY7BkY=--6e833734c4c77929497b286f7564874c351136fc
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.10166 (9 reqs/sec) | Rendering: 0.00184 (1%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 13:04:12) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIlhTdG9wcGluZyBjb250YWluZXIgLi4uPGJyIC8+
+Q29udGFpbmVyIHdhcyBzdG9wcGVkPGJyIC8+Q29udGFpbmVyIGlzIHVubW91
+bnRlZDxiciAvPgY6CkB1c2VkewY7BlQ=--8fc8db749097ddbbeffe6977a00635a015c50b30
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02634 (37 reqs/sec) | Rendering: 0.00305 (11%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#stop (for 172.31.0.119 at 2009-09-15 13:05:07) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"stop", "id"=>"140", "controller"=>"virtual_machines"}
+Redirected to http://172.31.0.52:3000/virtual_machines
+Completed in 121.13582 (0 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://172.31.0.52/virtual_machines/stop/140]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 13:07:08) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIlhTdG9wcGluZyBjb250YWluZXIgLi4uPGJyIC8+
+Q29udGFpbmVyIHdhcyBzdG9wcGVkPGJyIC8+Q29udGFpbmVyIGlzIHVubW91
+bnRlZDxiciAvPgY6CkB1c2VkewY7BkY=--6e833734c4c77929497b286f7564874c351136fc
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02537 (39 reqs/sec) | Rendering: 0.00137 (5%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-15 13:28:01) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIlhTdG9wcGluZyBjb250YWluZXIgLi4uPGJyIC8+
+Q29udGFpbmVyIHdhcyBzdG9wcGVkPGJyIC8+Q29udGFpbmVyIGlzIHVubW91
+bnRlZDxiciAvPgY6CkB1c2VkewY7BlQ=--8fc8db749097ddbbeffe6977a00635a015c50b30
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.02421 (41 reqs/sec) | Rendering: 0.00136 (5%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
