@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>VMID</th>
+    <th>Host Name</th>
+    <th>Status</th>
+    <th>IP Address</th>
+  </tr>
+<% @vms.each do |vm| %>
+  <tr>
+    <td><%= vm.vmid %></td>
+    <td><%= vm.hostname %></td>
+    <td><%= vm.status %></td>
+    <td><%= vm.ip_address %></td>
+  </tr>
+<% end %>
+</table>
