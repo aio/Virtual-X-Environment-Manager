@@ -1,7 +1,8 @@
 <table>
   <tr>
     <th>VMID</th>
-    <th>Host Name</th>
+    <th>Type</th>
+    <th>Name</th>
     <th>Status</th>
     <th>IP Address</th>
     <th>Action</th>
@@ -9,7 +10,8 @@
 <% @vms.each do |vm| %>
   <tr>
     <td><%= vm.vmid %></td>
-    <td><%= vm.hostname %></td>
+    <td><%= vm.type %></td>
+    <td><%= vm.name %></td>
     <td><%= vm.status %></td>
     <td><%= vm.ip_address %></td>
     <td>

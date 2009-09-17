@@ -870,3 +870,168 @@ bnRlZDxiciAvPgY6CkB1c2VkewY7BlQ=--8fc8db749097ddbbeffe6977a00635a015c50b30
   Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
 Rendering virtual_machines/index
 Completed in 0.02421 (41 reqs/sec) | Rendering: 0.00136 (5%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-17 12:59:10) [GET]
+  Session ID: 3b6a545d4415bad71da58880359f88cd
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.16067 (6 reqs/sec) | Rendering: 0.00264 (1%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.59/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-17 16:22:50) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.15957 (6 reqs/sec) | Rendering: 0.00216 (1%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.59/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-17 16:39:57) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.16228 (6 reqs/sec) | Rendering: 0.00212 (1%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.59/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-17 16:48:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.16396 (6 reqs/sec) | Rendering: 0.00222 (1%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.59/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-17 16:48:58) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.16234 (6 reqs/sec) | Rendering: 0.00223 (1%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.59/virtual_machines]
+
+
+Processing VirtualMachinesController#start (for 172.31.0.119 at 2009-09-17 16:49:01) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"start", "id"=>"106", "controller"=>"virtual_machines"}
+
+
+TypeError (can't convert Fixnum into String):
+    /app/models/virtual_machine.rb:34:in `+'
+    /app/models/virtual_machine.rb:34:in `start'
+    /app/controllers/virtual_machines_controller.rb:8:in `start'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /var/lib/gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /var/lib/gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/1.8/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/1.8/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:129:in `run'
+    /usr/lib/ruby/1.8/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/1.8/mongrel_rails:282
+    /var/lib/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /var/lib/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /var/lib/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /var/lib/gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /var/lib/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /var/lib/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /var/lib/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /var/lib/gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /var/lib/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-17 16:49:58) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.16483 (6 reqs/sec) | Rendering: 0.00223 (1%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.59/virtual_machines]
+
+
+Processing VirtualMachinesController#start (for 172.31.0.119 at 2009-09-17 16:50:00) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"start", "id"=>"106", "controller"=>"virtual_machines"}
+Redirected to http://172.31.0.59:3000/virtual_machines
+Completed in 0.63044 (1 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://172.31.0.59/virtual_machines/start/106]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-17 16:50:01) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIgAGOgpAdXNlZHsGOwZG--987901eaec14f1a96d3bd58bd5eaddc0806ae48a
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.16001 (6 reqs/sec) | Rendering: 0.00091 (0%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.59/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-17 16:50:07) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIgAGOgpAdXNlZHsGOwZU--02eea290dd4f61255a353abeb5f2b845b6aaffba
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.18791 (5 reqs/sec) | Rendering: 0.00103 (0%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.59/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-17 16:50:09) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.15668 (6 reqs/sec) | Rendering: 0.00097 (0%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.59/virtual_machines]
+
+
+Processing VirtualMachinesController#stop (for 172.31.0.119 at 2009-09-17 16:50:36) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"stop", "id"=>"106", "controller"=>"virtual_machines"}
+Redirected to http://172.31.0.59:3000/virtual_machines
+Completed in 1.36673 (0 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://172.31.0.59/virtual_machines/stop/106]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-17 16:50:38) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgxtZXNzYWdlIgAGOgpAdXNlZHsGOwZG--987901eaec14f1a96d3bd58bd5eaddc0806ae48a
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.16479 (6 reqs/sec) | Rendering: 0.00091 (0%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.59/virtual_machines]
