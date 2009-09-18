@@ -19,6 +19,7 @@
       <a href="/virtual_machines/start/<%= vm.vmid %>">Start</a>
     <% elsif vm.running? %>
        <a href="/virtual_machines/stop/<%= vm.vmid %>">Stop</a>
+       <a href="/virtual_machines/vnc_client/<%= vm.vmid %>" target="_new">Console</a>
     <% end %>
     </td>
   </tr>

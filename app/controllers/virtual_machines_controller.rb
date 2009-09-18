@@ -3,6 +3,10 @@ class VirtualMachinesController < ApplicationController
     @vms = VirtualMachine.all
   end
 
+  def vnc_client
+    @vm = VirtualMachine.find(params[:id])
+  end
+
   def start
     @vm = VirtualMachine.find(params[:id])
     @vm.start if @vm.stopped?

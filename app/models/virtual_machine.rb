@@ -1,3 +1,5 @@
+require 'socket'
+
 CMD_VZ_START = "/usr/sbin/vzctl start "
 CMD_QM_START = "/usr/sbin/qm start "
 CMD_VZ_STOP = "/usr/sbin/vzctl stop "
@@ -8,7 +10,15 @@ CMD_VZ_LISTALL = "/usr/sbin/vzlist -a"
 CMD_QM_LISTALL = "/usr/sbin/qm list"
 
 class VirtualMachine
-  attr_reader :buffer, :status, :type, :name, :vmid, :hostname, :ip_address
+  attr_reader :buffer, 
+              :status, 
+              :type, 
+              :name, 
+              :vmid, 
+              :hostname, 
+              :ip_address,
+              :vnc_port,
+              :vnc_password 
 
   def initialize(type, vmid, name, status, ip_address, hostname)
     @type = type
@@ -80,4 +90,43 @@ class VirtualMachine
     return list
   end
 
+  def self.next_vnc_port
+    for port in 5900..6000 do
+      no_err = true
+      begin
+        sock = TCPServer.new('localhost', port)
+      rescue Exception => e
+        no_err = false
+      end
+      
+      if no_err
+        sock.close
+        return port
+      end
+    end
+    
+    return nil
+  end
+
+  def create_vnc_proxy
+    port = VirtualMachine.next_vnc_port
+    timeout = 30
+    if port
+      @vnc_port = port
+      
+      # generate random password
+      chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+      @vnc_password = ""
+      1.upto(8) { |i| @vnc_password << chars[rand(chars.size-1)] } # password length is 8 as vnc server only accept 8 chars in maxium
+      
+      qmstr = "/usr/sbin/qm vncproxy #{@vmid} @vnc_password"
+      cmdstr = "/bin/nc -l -p #{port} -w #{timeout} -c #{qmstr} 2>1"
+      return system(cmdstr)
+    end
+  end
+  
+  def create_vnc_console
+    
+  end
+  
 end
