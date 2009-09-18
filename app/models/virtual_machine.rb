@@ -8,8 +8,7 @@ CMD_VZ_LISTALL = "/usr/sbin/vzlist -a"
 CMD_QM_LISTALL = "/usr/sbin/qm list"
 
 class VirtualMachine
-  attr_accessor :vmid, :hostname, :ip_address
-  attr_reader :buffer, :status, :type, :name
+  attr_reader :buffer, :status, :type, :name, :vmid, :hostname, :ip_address
 
   def initialize(type, vmid, name, status, ip_address, hostname)
     @type = type
@@ -18,7 +17,7 @@ class VirtualMachine
     @status = status.to_s
     @ip_address = ip_address.to_s
     @hostname = hostname.to_s
-    @output = ''
+    @buffer = ''
   end
 
   def running?
@@ -44,7 +43,7 @@ class VirtualMachine
   end
 
   def output
-    @buffer.gsub(/(\x0d|\x0a)/, '<br />')
+    @buffer.gsub(/(\x0d|\x0a)/, '<br />') if @buffer
   end
 
   def self.find(vmid)

@@ -1035,3 +1035,11 @@ SGFzaHsGOgxtZXNzYWdlIgAGOgpAdXNlZHsGOwZG--987901eaec14f1a96d3bd58bd5eaddc0806ae4
   Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
 Rendering virtual_machines/index
 Completed in 0.16479 (6 reqs/sec) | Rendering: 0.00091 (0%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.59/virtual_machines]
+
+
+Processing VirtualMachinesController#index (for 172.31.0.119 at 2009-09-18 09:59:00) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--8c0cfac7c36fcda0c7ae2c4e36b632ef3aab15ab
+  Parameters: {"action"=>"index", "controller"=>"virtual_machines"}
+Rendering virtual_machines/index
+Completed in 0.33835 (2 reqs/sec) | Rendering: 0.00350 (1%) | DB: 0.00000 (0%) | 200 OK [http://172.31.0.52/virtual_machines]
