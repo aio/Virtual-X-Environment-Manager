@@ -5,6 +5,7 @@ class VirtualMachinesController < ApplicationController
 
   def vnc_client
     @vm = VirtualMachine.find(params[:id])
+    @vm.create_vnc_proxy
   end
 
   def start

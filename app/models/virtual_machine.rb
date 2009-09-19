@@ -27,6 +27,8 @@ class VirtualMachine
     @status = status.to_s
     @ip_address = ip_address.to_s
     @hostname = hostname.to_s
+    @vnc_port = 0
+    @vnc_password = ''
     @buffer = ''
   end
 
@@ -119,8 +121,9 @@ class VirtualMachine
       @vnc_password = ""
       1.upto(8) { |i| @vnc_password << chars[rand(chars.size-1)] } # password length is 8 as vnc server only accept 8 chars in maxium
       
-      qmstr = "/usr/sbin/qm vncproxy #{@vmid} @vnc_password"
-      cmdstr = "/bin/nc -l -p #{port} -w #{timeout} -c #{qmstr} 2>1"
+      qmstr = "/usr/sbin/qm vncproxy #{@vmid} #{@vnc_password}"
+      cmdstr = "/bin/nc -l -p #{@vnc_port} -w #{timeout} -c \"#{qmstr}\" & 2>1"
+      puts "cmd: #{cmdstr}"
       return system(cmdstr)
     end
   end
