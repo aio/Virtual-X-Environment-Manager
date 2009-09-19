@@ -119,16 +119,94 @@ class VirtualMachine
       # generate random password
       chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
       @vnc_password = ""
-      1.upto(8) { |i| @vnc_password << chars[rand(chars.size-1)] } # password length is 8 as vnc server only accept 8 chars in maxium
+      # password length is 8 as vnc server only accept 8 chars in maxium
+      1.upto(8) { |i| @vnc_password << chars[rand(chars.size-1)] } 
       
       qmstr = "/usr/sbin/qm vncproxy #{@vmid} #{@vnc_password}"
       cmdstr = "/bin/nc -l -p #{@vnc_port} -w #{timeout} -c \"#{qmstr}\" & 2>1"
-      puts "cmd: #{cmdstr}"
+      # puts "cmd: #{cmdstr}"
       return system(cmdstr)
     end
   end
   
   def create_vnc_console
+=begin
+my ($class, $cid, $veid, $type, $userid, $status) = @_;
+
+my $remip;
+my $remcmd = [];
+
+$userid = 'unknown' if !$userid;
+
+my $cinfo = PVE::Cluster::clusterinfo ();
+
+if ($cid != $cinfo->{local}->{cid}) {
+  $remip = $cinfo->{"CID_$cid"}->{ip};
+  $remcmd = ['/usr/bin/ssh', '-t', $remip];
+}
+
+my $port = __next_vnc_port ();
+# generate ticket, olny first 8 character used by vnc
+my $ticket = Digest::SHA1::sha1_base64 ($userid, rand(), time());
+
+my $timeout = 1; # immediately exit when last client disconnects
+
+my $realcmd = sub {
+  my $upid = shift;
+  
+  syslog ('info', "starting vnc console $upid\n");
+  
+  # fixme: use ssl
+  
+  my $pwfile = "/tmp/.vncpwfile.$$";
+  
+  my $vzcmd;
+  
+  if ($type eq 'openvz') {
+    if ($status eq 'running') {
+      $vzcmd = [ '/usr/sbin/vzctl', 'enter', $veid ];
+      } elsif ($status eq 'mounted') {
+        $vzcmd = [ "/usr/bin/pvebash", $veid, 'root'];
+        } else {
+          $vzcmd = [ "/usr/bin/pvebash", $veid, 'private'];
+          }
+  } elsif ($type eq 'qemu') {
+    $vzcmd = [ "/usr/sbin/qm", 'monitor', $veid ];
+    } else {
+      $vzcmd = [ '/bin/true' ]; # should not be reached
+    }
+      
+  my @cmd = ('/usr/bin/vncterm', '-rfbport', $port,
+  '-passwdfile', "rm:$pwfile",
+  '-timeout', $timeout, '-c', @$remcmd, @$vzcmd);
+  
+  my $cmdstr = join (' ', @cmd);
+  syslog ('info', "CMD: $cmdstr");
+  
+  my $fh = IO::File->new ($pwfile, "w", 0600);
+  print $fh "$ticket\n";
+  $fh->close;
+  
+  if (system (@cmd) != 0) {
+    my $msg = "VM $veid console viewer failed - $?";
+    syslog ('err', $msg);
+    exit (-1);
+    }
+    
+    exit (0);
+    };
+    
+    if (my $uid = __fork_worker ('vncview', "$cid:$veid:$userid:$port:$ticket", $realcmd)) {
+      
+      #PVE::Config::update_file ("vncview", $uid);
+      
+      return { port => $port, ticket => $ticket};
+    }
+    
+   return undef;
+          
+        
+=end
     
   end
   
