@@ -32,7 +32,6 @@ class ClusterNode
   end
   
   # Get All host nodes in the cluster
-  # Class method
   def self.getHostNodes
     list = []
     cmdstr = CMD_CLUSTER_LIST
