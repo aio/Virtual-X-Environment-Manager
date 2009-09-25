@@ -1,4 +1,8 @@
+<% @host_nodes.each do |hn| %>
 <table>
+  <tr>
+  	<td colspan="6"><%= hn.ip_address %></td>	
+  </tr>
   <tr>
     <th>VMID</th>
     <th>Type</th>
@@ -7,24 +11,26 @@
     <th>IP Address</th>
     <th>Action</th>
   </tr>
-<% @vms.each do |vm| %>
+  <% hn.vms.each do |vm| %>
   <tr>
-    <td><%= vm.vmid %></td>
+    <td><%= vm.id %></td>
     <td><%= vm.type %></td>
     <td><%= vm.name %></td>
     <td><%= vm.status %></td>
     <td><%= vm.ip_address %></td>
     <td>
     <% if vm.stopped? %>
-      <a href="/virtual_machines/start/<%= vm.vmid %>">Start</a>
+      <a href="/virtual_machines/start/<%= vm.id %>?host_ip=<%= vm.host_ip %>">Start</a>
     <% elsif vm.running? %>
-       <a href="/virtual_machines/stop/<%= vm.vmid %>">Stop</a>
-       <a href="/virtual_machines/vnc_client/<%= vm.vmid %>" target="_new">Console</a>
+       <a href="/virtual_machines/stop/<%= vm.id %>?host_ip=<%= vm.host_ip %>">Stop</a>
+       <a href="/virtual_machines/vnc_client/<%= vm.id %>?host_ip=<%= vm.host_ip %>" target="_new">Console</a>
     <% end %>
     </td>
   </tr>
-<% end %>
+  <% end %>
 </table>
+<br />
+<% end %>
 <br />
 <div>
   <%= flash[:message] %>
