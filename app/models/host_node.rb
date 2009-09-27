@@ -1,4 +1,4 @@
-class ClusterNode
+class HostNode
   attr_reader :buffer,
               :id,
               :ip_address,
@@ -32,16 +32,19 @@ class ClusterNode
   end
   
   # Get All host nodes in the cluster
-  def self.getHostNodes
+  def self.all
     list = []
     cmdstr = CMD_CLUSTER_LIST
     IO.popen(cmdstr) do |f|
       f.read.each do |line|
-        arr = line.gsub(': ', ' ').gsub(/\s+/, ' ').gsub(/^\s*/, '').split(' ')
-        list << ClusterNode.new(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]) if arr.size == 9 and arr[0]=~/\d+/
+        arr = line.gsub(': ', '  ').gsub(/\s{2,}/, '  ').gsub(/^\s*/, '').split('  ')
+        list << HostNode.new(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]) if arr.size == 9  and not line.include? 'ERROR'
       end
     end
     return list
   end
   
+  def self.node_info
+    
+  end
 end

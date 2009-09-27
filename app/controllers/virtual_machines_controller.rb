@@ -1,7 +1,7 @@
 class VirtualMachinesController < ApplicationController
   # List all the VMs on all the host nodes in the cluster
   def index
-    @host_nodes = ClusterNode.getHostNodes
+    @host_nodes = HostNode.all
     @host_nodes.each do |hn|
       hn.getVMs
     end

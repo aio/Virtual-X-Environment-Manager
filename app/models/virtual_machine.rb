@@ -34,7 +34,7 @@ class VirtualMachine
   end
 
   def start
-    if host_ip == IPSocket.getaddress(Socket.gethostname)
+    if @host_ip == IPSocket.getaddress(Socket.gethostname)
       prefix = ''
     else
       prefix = "#{CMD_SSH_EXEC} #{host_ip} " 
@@ -47,7 +47,7 @@ class VirtualMachine
   end
 
   def stop
-    if host_ip == IPSocket.getaddress(Socket.gethostname)
+    if @host_ip == IPSocket.getaddress(Socket.gethostname)
       prefix = ''
     else
       prefix = "#{CMD_SSH_EXEC} #{host_ip} " 
@@ -155,7 +155,7 @@ class VirtualMachine
     port = VirtualMachine.next_vnc_port
     timeout = 30
     
-    if host_ip == IPSocket.getaddress(Socket.gethostname)
+    if @host_ip == IPSocket.getaddress(Socket.gethostname)
       prefix = ''
     else
       prefix = "#{CMD_SSH_BATCH} #{@host_ip} " 

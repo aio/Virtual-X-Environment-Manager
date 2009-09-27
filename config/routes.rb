@@ -36,7 +36,8 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.
+  map.root :controller => "virtual_machines", :action => "index"
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
-  map.root :controller => "virtual_machine", :action => "index"
+  
 end
