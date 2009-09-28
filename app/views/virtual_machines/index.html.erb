@@ -24,6 +24,9 @@
     <% elsif vm.running? %>
        <a href="/virtual_machines/stop/<%= vm.id %>?host_ip=<%= vm.host_ip %>">Stop</a>
        <a href="/virtual_machines/vnc_client/<%= vm.id %>?host_ip=<%= vm.host_ip %>" target="_new">Console</a>
+       <% if vm.type == 'qm' %>
+       <a href="/virtual_machines/qm_monitor/<%= vm.id %>?host_ip=<%= vm.host_ip %>" target="_new">Monitor</a>
+       <% end %>
     <% end %>
     </td>
   </tr>

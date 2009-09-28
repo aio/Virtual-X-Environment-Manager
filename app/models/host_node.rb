@@ -44,7 +44,15 @@ class HostNode
     return list
   end
   
-  def self.node_info
-    
+  def self.my_info
+    info = {}
+    cmdstr = CMD_CLUSTER_MYINFO
+    IO.popen(cmdstr) do |f|
+      f.read.each do |line|
+        arr = line.split(' ')
+        info = {:id => arr[0], :hostname => arr[1], :ip_address => arr[2], :role => arr[3]} if arr.size == 4
+      end
+    end
+    return info
   end
 end

@@ -1,0 +1,46 @@
+<html>
+<head><title><%= @vm.name %> - VXE Console</title>
+</head>
+
+<script language=JavaScript>
+  function wresize() {
+    
+    var ps = document.vncapp.getPreferredSize();
+    var aw = ps.width;
+    var ah = ps.height;
+    
+    if (!window.innerHeight && document.body && document.body.offsetHeight) {
+      // hack for IE
+      var oh = document.documentElement.clientHeight;
+      var ow = document.documentElement.clientWidth;
+      
+      document.vncapp.width = aw;
+      document.vncapp.height = ah;
+      
+      try { window.resizeBy (aw - ow, ah - oh); } catch (e) {}
+    } else {
+      // other browsers
+      var oh = window.innerHeight;
+      var ow = window.innerWidth;
+      
+      document.vncapp.width = aw;
+      document.vncapp.height = ah;
+      
+      try { window.resizeBy (aw - ow, ah - oh); } catch (e) {}
+    }
+    
+    setTimeout ("wresize()", 1000);
+  }
+</script>
+
+<body id=vnc style='margin:0px;' onLoad='javascript:wresize();'>
+  <div class=lightcolbd style='border: 1px solid;'>
+    <APPLET id=vncapp CODE='VncViewer.class' ARCHIVE='/VncViewer.jar' width=640 height=400 vspace=0 hspace=0>
+      <param name=PORT value='<%= @vm.vnc_port %>'>
+      <param name=PASSWORD value='<%= @vm.vnc_password %>'>
+      <param name='Show Controls' value='No'>
+      <param name='Show Offline Desktop' value='No'>
+    </APPLET>
+  </div>
+  <body>
+    </html>

@@ -181,8 +181,14 @@ class VirtualMachine
   # Return:
   #   Integer value of the execution result
   def create_vnc_console
+    if @host_ip == IPSocket.getaddress(Socket.gethostname)
+      prefix = ''
+    else
+      prefix = "#{CMD_SSH_EXEC} #{@host_ip} " 
+    end
+    
     port = VirtualMachine.next_vnc_port
-    timeout = 30
+    timeout = 1
     if port and self.running?
       @vnc_port = port
       
@@ -192,9 +198,27 @@ class VirtualMachine
       # password length is 8 as vnc server only accept 8 chars in maxium
       1.upto(8) { |i| @vnc_password << chars[rand(chars.size-1)] } 
       
-      vzstr = "/usr/sbin/qm vncproxy #{@id} #{@vnc_password}"
-      cmdstr = "/bin/nc -l -p #{@vnc_port} -w #{timeout} -c \"#{qmstr}\" & 2>1"
-      # puts "cmd: #{cmdstr}"
+      pwdfile = "/tmp/.vncpwd.#{rand()}"
+      
+      File.open(pwdfile, 'w') {|f| f.write(@vnc_password)}
+      
+      if @type == 'vz'
+        if @status == 'running'
+          vzcmd = "/usr/sbin/vzctl enter #{@id}"
+        elsif @status == 'mounted'
+          vzcmd = "/usr/bin/pvebash #{@id} root"
+        else
+          vzcmd = "/usr/bin/pvebash #{@id} private"
+        end
+      elsif @type == 'qm'
+        vzcmd = "/usr/sbin/qm monitor #{@id}"
+      else
+        vzcmd = "/bin/true"  # should not be reached
+      end
+      
+      cmdstr = "/usr/bin/vncterm -rfbport #{@vnc_port} -passwdfile rm:#{pwdfile} -timeout #{timeout} -c #{prefix} #{vzcmd} &";
+      
+      puts "cmd: #{cmdstr}"
       return system(cmdstr)
     end
     

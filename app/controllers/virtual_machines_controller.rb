@@ -15,7 +15,7 @@ class VirtualMachinesController < ApplicationController
   end
 
   # Create monitor for specific QM VM
-  def monitor
+  def qm_monitor
     @vm = VirtualMachine.find(params[:host_ip], params[:id])
     @vm.create_vnc_console if @vm.type == 'qm'
   end
