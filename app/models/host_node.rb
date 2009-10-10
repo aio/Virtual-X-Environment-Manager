@@ -12,7 +12,7 @@ class HostNode
               :vms
   
   # Initialize the host node
-  def initialize(id, ip_address, role, state, uptime, load, mem, storage_root, storage_data)
+  def initialize(id, ip_address, role, state, uptime, load, mem, storage)
     @buffer = ''
     @id = id
     @ip_address = ip_address
@@ -21,8 +21,7 @@ class HostNode
     @uptime = uptime
     @load = load
     @mem = mem
-    @storage_root = storage_root
-    @storage_data = storage_data
+    @storage = storage
     @vms = []
   end
   
@@ -34,25 +33,35 @@ class HostNode
   # Get All host nodes in the cluster
   def self.all
     list = []
-    cmdstr = CMD_CLUSTER_LIST
-    IO.popen(cmdstr) do |f|
-      f.read.each do |line|
-        arr = line.gsub(': ', '  ').gsub(/\s{2,}/, '  ').gsub(/^\s*/, '').split('  ')
-        list << HostNode.new(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]) if arr.size == 9  and not line.include? 'ERROR'
-      end
+    version = '0.0'
+
+    exec_result_by_line(CMD_PVE_VER) do |line|
+      result = line.scan(/pve\-manager\/(\d+\.\d+)\//)
+      version = result[0][0] if result.is_a? Array and result[0].is_a? Array     
     end
+
+    if version <= '1.3'
+      correct_cols = 9
+    else
+      correct_cols = 8
+    end
+    
+    exec_result_by_line(CMD_CLUSTER_LIST) do |line|
+      arr = line.gsub(': ', '  ').gsub(/\s{2,}/, '  ').gsub(/^\s*/, '').split('  ')
+      list << HostNode.new(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7]) if arr.size == correct_cols  and not line.include? 'ERROR'
+    end
+    
     return list
   end
   
   def self.my_info
     info = {}
-    cmdstr = CMD_CLUSTER_MYINFO
-    IO.popen(cmdstr) do |f|
-      f.read.each do |line|
-        arr = line.split(' ')
-        info = {:id => arr[0], :hostname => arr[1], :ip_address => arr[2], :role => arr[3]} if arr.size == 4
-      end
+    
+    exec_result_by_line(CMD_CLUSTER_MYINFO) do |line|
+      arr = line.split(' ')
+      info = {:id => arr[0], :hostname => arr[1], :ip_address => arr[2], :role => arr[3]} if arr.size == 4
     end
+    
     return info
   end
 end
