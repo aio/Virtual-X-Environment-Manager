@@ -1621,3 +1621,108 @@ Migrating to CreateUsers (20090927091138)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [4;36;1mSQL (0.000065)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000798)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000356)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090927091138)
+  [4;36;1mSQL (0.000261)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRoles (20090927091639)
+  [4;35;1mSQL (0.000252)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000245)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.008888)[0m   [0mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "description" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002432)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090927091639')[0m
+Migrating to CreatePrivileges (20090927091719)
+  [4;35;1mSQL (0.000357)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003010)[0m   [0;1mCREATE TABLE "privileges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "resource_type" varchar(255) DEFAULT NULL NULL, "resource_id" integer DEFAULT NULL NULL, "readable" boolean DEFAULT NULL NULL, "writable" boolean DEFAULT NULL NULL, "executable" boolean DEFAULT NULL NULL, "deletable" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002053)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090927091719')[0m
+  [4;36;1mSQL (0.000466)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000495)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000232)[0m   [0;1mPRAGMA index_list("privileges")[0m
+  [4;35;1mSQL (0.000212)[0m   [0mPRAGMA index_list("roles")[0m
+  [4;36;1mSQL (0.000128)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.001049)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000299)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000209)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000198)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090927091138)
+  [4;36;1mSQL (0.000206)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRoles (20090927091639)
+  [4;35;1mSQL (0.000196)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePrivileges (20090927091719)
+  [4;36;1mSQL (0.000198)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRolePrivilegeLink (20091012015549)
+  [4;35;1mSQL (0.000199)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.006438)[0m   [0mCREATE TABLE "role_privilege_link" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "role_id" integer DEFAULT NULL NULL, "privilege_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001692)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091012015549')[0m
+Migrating to CreateUserRoleLink (20091012015947)
+  [4;35;1mSQL (0.000285)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002518)[0m   [0;1mCREATE TABLE "user_role_link" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "role_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001671)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091012015947')[0m
+  [4;36;1mSQL (0.000347)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000311)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mPRAGMA index_list("privileges")[0m
+  [4;35;1mSQL (0.000059)[0m   [0mPRAGMA index_list("role_privilege_link")[0m
+  [4;36;1mSQL (0.000058)[0m   [0;1mPRAGMA index_list("roles")[0m
+  [4;35;1mSQL (0.000058)[0m   [0mPRAGMA index_list("user_role_link")[0m
+  [4;36;1mSQL (0.000065)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mRole Create (0.001009)[0m   [0;1mINSERT INTO "roles" ("name", "created_at", "updated_at", "description") VALUES('admin', '2009-10-12 02:08:31', '2009-10-12 02:08:31', 'Administrators')[0m
+  [4;35;1mPrivilege Create (0.000647)[0m   [0mINSERT INTO "privileges" ("name", "created_at", "resource_type", "resource_id", "executable", "updated_at", "writable", "deletable", "readable") VALUES('control everything', '2009-10-12 02:10:37', 'everything', 9999, 't', '2009-10-12 02:10:37', 't', 't', 't')[0m
+  [4;36;1mPrivilege Load (0.000736)[0m   [0;1mSELECT * FROM "privileges" INNER JOIN "role_privilege_link" ON "privileges".id = "role_privilege_link".privilege_id WHERE ("role_privilege_link".role_id = 1 ) [0m
+  [4;35;1mSQL (0.000563)[0m   [0mINSERT INTO "role_privilege_link" ("privilege_id", "created_at", "updated_at", "role_id", "id") VALUES (1, '2009-10-12 02:10:37', '2009-10-12 02:10:37', 1, 1)[0m
+  [4;36;1mUser Create (0.000547)[0m   [0;1mINSERT INTO "users" ("salt", "created_at", "updated_at", "hashed_password", "role_id", "login") VALUES(NULL, '2009-10-12 02:14:39', '2009-10-12 02:14:39', NULL, NULL, 'edward')[0m
+  [4;35;1mSQL (0.000347)[0m   [0mINSERT INTO "user_role_link" ("created_at", "updated_at", "role_id", "id", "user_id") VALUES ('2009-10-12 02:08:31', '2009-10-12 02:08:31', 1, 1, 1)[0m
+  [4;36;1mUser Load (0.001059)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.000670)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mRole Load (0.001103)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "user_role_link" ON "roles".id = "user_role_link".role_id WHERE ("user_role_link".user_id = 1 ) [0m
+  [4;35;1mPrivilege Load (0.001038)[0m   [0mSELECT * FROM "privileges" INNER JOIN "role_privilege_link" ON "privileges".id = "role_privilege_link".privilege_id WHERE ("role_privilege_link".role_id = 1 ) [0m
+  [4;36;1mSQL (0.000999)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000338)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000246)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000240)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000240)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000244)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090927091138)
+  [4;36;1mSQL (0.000263)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRoles (20090927091639)
+  [4;35;1mSQL (0.000247)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePrivileges (20090927091719)
+  [4;36;1mSQL (0.000252)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRolePrivilegeLink (20091012015549)
+  [4;35;1mSQL (0.000248)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUserRoleLink (20091012015947)
+  [4;36;1mSQL (0.000248)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to RemoveColumnRoleIdFromUser (20091012021604)
+  [4;35;1mSQL (0.000337)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000138)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000855)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "role_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000058)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.000385)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.000489)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL NULL, "hashed_password" varchar(255) DEFAULT NULL NULL, "salt" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000074)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.026372)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091012021604')[0m
+  [4;36;1mSQL (0.000418)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000364)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000181)[0m   [0;1mPRAGMA index_list("privileges")[0m
+  [4;35;1mSQL (0.000102)[0m   [0mPRAGMA index_list("role_privilege_link")[0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mPRAGMA index_list("roles")[0m
+  [4;35;1mSQL (0.000101)[0m   [0mPRAGMA index_list("user_role_link")[0m
+  [4;36;1mSQL (0.000129)[0m   [0;1mPRAGMA index_list("users")[0m
