@@ -14,11 +14,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   def redirect_to_user_home
-    if current_user.role == 0
-      redirect_to :controller=>'users', :action=>'list'
-    else
-      redirect_to :controller=>'virutal_machines', :action=>'index'
-    end
+      redirect_to :controller=>'virtual_machines', :action=>'index'
   end
   
   def login_required
@@ -28,7 +24,7 @@ class ApplicationController < ActionController::Base
     flash[:warning]='Please login to continue'
     session[:return_to]=request.request_uri
     redirect_to :controller => "users", :action => "login"
-    return false 
+    return false
   end
   
   def admin_required
