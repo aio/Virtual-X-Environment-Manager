@@ -29,6 +29,13 @@ class User < ActiveRecord::Base
     self.hashed_password = User.encrypt(@password, self.salt)
   end
   
+  def is_admin?
+    self.roles.each do |role|
+      return true if role.name == 'admin'
+    end
+    return false
+  end
+  
   protected
   
   def self.encrypt(pass, salt)
@@ -42,5 +49,7 @@ class User < ActiveRecord::Base
     1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
     return newpass
   end
+  
+
   
 end

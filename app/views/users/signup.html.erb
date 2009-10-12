@@ -1,0 +1,16 @@
+<% form_tag :action=> "signup" do %>
+
+<%= error_messages_for 'user' %><br/>
+
+<label for="user_login">用户名</label><br/>
+<%= text_field "user", "login", :size => 20 %><br/>
+
+<label for="user_password">密码</label><br/>
+<%= password_field "user", "password", :size => 20 %><br/>
+
+<label for="user_password_confirmation">重复</label><br/>
+<%= password_field "user", "password_confirmation", :size => 20 %><br/>
+
+<%= submit_tag "创建用户" %>
+
+<% end %>

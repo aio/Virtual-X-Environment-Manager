@@ -15,9 +15,9 @@ class ApplicationController < ActionController::Base
   
   def redirect_to_user_home
     if current_user.role == 0
-      redirect_to :controller=>'admin', :action=>'list'
+      redirect_to :controller=>'users', :action=>'list'
     else
-      redirect_to :controller=>'plotters', :action=>'list'
+      redirect_to :controller=>'virutal_machines', :action=>'index'
     end
   end
   
@@ -27,17 +27,17 @@ class ApplicationController < ActionController::Base
     end
     flash[:warning]='Please login to continue'
     session[:return_to]=request.request_uri
-    redirect_to :controller => "user", :action => "login"
+    redirect_to :controller => "users", :action => "login"
     return false 
   end
   
   def admin_required
-    if session[:user] and session[:user].role == 0
+    if session[:user] and session[:user].is_admin?
       return true
     end
     flash[:warning]='Please login to continue'
     session[:return_to]=request.request_uri
-    redirect_to :controller => "user", :action => "login"
+    redirect_to :controller => "users", :action => "login"
     return false
   end
   

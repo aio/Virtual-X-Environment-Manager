@@ -1,4 +1,5 @@
 class VirtualMachinesController < ApplicationController
+  before_filter :login_required
   # List all the VMs on all the host nodes in the cluster
   def index
     @host_nodes = HostNode.all

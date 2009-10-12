@@ -5,7 +5,9 @@ class Role < ActiveRecord::Base
   validates_uniqueness_of :name
   
   has_and_belongs_to_many :privileges, 
-  :join_table => 'role_privilege_link', 
-  :association_foreign_key => 'privilege_id', 
-  :foreign_key => 'role_id'
+                          :join_table => 'role_privilege_link', 
+                          :association_foreign_key => 'privilege_id', 
+                          :foreign_key => 'role_id'
+
+
 end
