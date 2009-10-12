@@ -1726,3 +1726,23 @@ Migrating to RemoveColumnRoleIdFromUser (20091012021604)
   [4;36;1mSQL (0.000101)[0m   [0;1mPRAGMA index_list("roles")[0m
   [4;35;1mSQL (0.000101)[0m   [0mPRAGMA index_list("user_role_link")[0m
   [4;36;1mSQL (0.000129)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.001178)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000808)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000906)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000795)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001086)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
