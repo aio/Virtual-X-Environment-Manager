@@ -1,4 +1,6 @@
 require 'socket'
+require 'pve_helper'
+include PveHelper
 
 class VirtualMachine
   attr_reader :buffer,
@@ -37,12 +39,12 @@ class VirtualMachine
     if @host_ip == IPSocket.getaddress(Socket.gethostname)
       prefix = ''
     else
-      prefix = "#{CMD_SSH_EXEC} #{host_ip} " 
+      prefix = "#{PveHelper::CMD_SSH_EXEC} #{host_ip} " 
     end
     
-    cmdstr = "#{prefix} #{(@type == 'vz' ? CMD_VZ_START : CMD_QM_START)} #{@id.to_s}"
+    cmdstr = "#{prefix} #{(@type == 'vz' ? PveHelper::CMD_VZ_START : PveHelper::CMD_QM_START)} #{@id.to_s}"
     
-    @buffer = exec_result(cmdstr)
+    @buffer = PveHelper.exec_result(cmdstr)
     
   end
 
@@ -50,11 +52,11 @@ class VirtualMachine
     if @host_ip == IPSocket.getaddress(Socket.gethostname)
       prefix = ''
     else
-      prefix = "#{CMD_SSH_EXEC} #{host_ip} " 
+      prefix = "#{PveHelper::CMD_SSH_EXEC} #{host_ip} " 
     end
     
-    cmdstr = "#{prefix} #{(@type == 'vz' ? CMD_VZ_STOP : CMD_QM_STOP)} #{@id.to_s}"
-    @buffer = exec_result(cmdstr)
+    cmdstr = "#{prefix} #{(@type == 'vz' ? PveHelper::CMD_VZ_STOP : PveHelper::CMD_QM_STOP)} #{@id.to_s}"
+    @buffer = PveHelper.exec_result(cmdstr)
   end
 
   def output
@@ -71,11 +73,11 @@ class VirtualMachine
     if host_ip == IPSocket.getaddress(Socket.gethostname)
       prefix = ''
     else
-      prefix = "#{CMD_SSH_EXEC} #{host_ip} " 
+      prefix = "#{PveHelper::CMD_SSH_EXEC} #{host_ip} " 
     end
     vm = nil
-    vm = VirtualMachine.getVZList(host_ip, prefix + CMD_VZ_LISTALL + " | grep #{id}")[0]
-    vm = VirtualMachine.getQMList(host_ip, prefix + CMD_QM_LISTALL + " | grep #{id}")[0] if vm == nil
+    vm = VirtualMachine.getVZList(host_ip, prefix + PveHelper::CMD_VZ_LISTALL + " | grep #{id}")[0]
+    vm = VirtualMachine.getQMList(host_ip, prefix + PveHelper::CMD_QM_LISTALL + " | grep #{id}")[0] if vm == nil
 
     return vm
   end
@@ -88,9 +90,9 @@ class VirtualMachine
     if host_ip == IPSocket.getaddress(Socket.gethostname)
       prefix = ''
     else
-      prefix = "#{CMD_SSH_EXEC} #{host_ip} " 
+      prefix = "#{PveHelper::CMD_SSH_EXEC} #{host_ip} " 
     end
-    return self.getVZList(host_ip, prefix + CMD_VZ_LISTALL) + self.getQMList(host_ip, prefix + CMD_QM_LISTALL)
+    return self.getVZList(host_ip, prefix + PveHelper::CMD_VZ_LISTALL) + self.getQMList(host_ip, prefix + PveHelper::CMD_QM_LISTALL)
   end
 
   # Get all OpenVZ VMs on specific host node
@@ -101,7 +103,7 @@ class VirtualMachine
   def self.getVZList(host_ip, cmdstr)
     list = []
     
-    exec_result_by_line(cmdstr) do |line|
+    PveHelper.exec_result_by_line(cmdstr) do |line|
       arr = line.gsub(/\s+/, ' ').gsub(/^\s*/, '').split(' ')
       list << VirtualMachine.new('vz', arr[0], host_ip, arr[4], arr[2], arr[3], arr[4]) if arr[0] =~ /\d{3}/ and arr.size == 5  # type, id, host_ip, name, status, ip_address, hostname
     end
@@ -117,7 +119,7 @@ class VirtualMachine
   def self.getQMList(host_ip, cmdstr)
     list = []
     
-    exec_result_by_line(cmdstr) do |line|
+    PveHelper.exec_result_by_line(cmdstr) do |line|
       arr = line.gsub(/\s+/, ' ').gsub(/^\s*/, '').split(' ')
       list << VirtualMachine.new('qm', arr[0], host_ip, arr[1], arr[2], '', '') if arr[0] =~ /\d{3}/ and arr.size == 6  # type, id, host_ip, name, status, ip_address, hostname
     end
@@ -156,7 +158,7 @@ class VirtualMachine
     if @host_ip == IPSocket.getaddress(Socket.gethostname)
       prefix = ''
     else
-      prefix = "#{CMD_SSH_BATCH} #{@host_ip} " 
+      prefix = "#{PveHelper::CMD_SSH_BATCH} #{@host_ip} " 
     end
     
     if port
@@ -182,7 +184,7 @@ class VirtualMachine
     if @host_ip == IPSocket.getaddress(Socket.gethostname)
       prefix = ''
     else
-      prefix = "#{CMD_SSH_EXEC} #{@host_ip} " 
+      prefix = "#{PveHelper::CMD_SSH_EXEC} #{@host_ip} " 
     end
     
     port = VirtualMachine.next_vnc_port

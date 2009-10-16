@@ -1,3 +1,6 @@
+require 'pve_helper'
+include PveHelper
+
 class HostNode
   attr_reader :buffer,
               :id,
@@ -34,8 +37,9 @@ class HostNode
   def self.all
     list = []
     version = '0.0'
+    is_cluster_env = true
 
-    exec_result_by_line(CMD_PVE_VER) do |line|
+    PveHelper.exec_result_by_line(PveHelper::CMD_PVE_VER) do |line|
       result = line.scan(/pve\-manager\/(\d+\.\d+)\//)
       version = result[0][0] if result.is_a? Array and result[0].is_a? Array     
     end
@@ -46,9 +50,14 @@ class HostNode
       correct_cols = 8
     end
     
-    exec_result_by_line(CMD_CLUSTER_LIST) do |line|
-      arr = line.gsub(': ', '  ').gsub(/\s{2,}/, '  ').gsub(/^\s*/, '').split('  ')
-      list << HostNode.new(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7]) if arr.size == correct_cols  and not line.include? 'ERROR'
+    info = self.my_info
+    if info[:role] == '-' or info[:role] == 'N'
+      list << HostNode.new(info[:id], info[:ip_address], info[:role], nil, nil, nil, nil, nil)
+    elsif info[:role] == 'M'
+      PveHelper.exec_result_by_line(PveHelper::CMD_CLUSTER_LIST) do |line|
+        arr = line.gsub(': ', '  ').gsub(/\s{2,}/, '  ').gsub(/^\s*/, '').split('  ')
+        list << HostNode.new(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7]) if arr.size == correct_cols  and not line.include? 'ERROR'
+      end      
     end
     
     return list
@@ -57,7 +66,7 @@ class HostNode
   def self.my_info
     info = {}
     
-    exec_result_by_line(CMD_CLUSTER_MYINFO) do |line|
+    PveHelper.exec_result_by_line(PveHelper::CMD_CLUSTER_MYINFO) do |line|
       arr = line.split(' ')
       info = {:id => arr[0], :hostname => arr[1], :ip_address => arr[2], :role => arr[3]} if arr.size == 4
     end

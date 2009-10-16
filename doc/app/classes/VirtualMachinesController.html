@@ -88,11 +88,11 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000004">index</a>&nbsp;&nbsp;
-      <a href="#M000006">monitor</a>&nbsp;&nbsp;
-      <a href="#M000007">start</a>&nbsp;&nbsp;
-      <a href="#M000008">stop</a>&nbsp;&nbsp;
-      <a href="#M000005">vnc_client</a>&nbsp;&nbsp;
+      <a href="#M000025">index</a>&nbsp;&nbsp;
+      <a href="#M000027">qm_monitor</a>&nbsp;&nbsp;
+      <a href="#M000028">start</a>&nbsp;&nbsp;
+      <a href="#M000029">stop</a>&nbsp;&nbsp;
+      <a href="#M000026">vnc_client</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -114,11 +114,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000004" class="method-detail">
-        <a name="M000004"></a>
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
 
         <div class="method-heading">
-          <a href="#M000004" class="method-signature">
+          <a href="#M000025" class="method-signature">
           <span class="method-name">index</span><span class="method-args">()</span>
           </a>
         </div>
@@ -128,54 +128,53 @@
 List all the VMs on all the host nodes in the cluster
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000004-source">
+            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000025-source">
 <pre>
-   <span class="ruby-comment cmt"># File app/controllers/virtual_machines_controller.rb, line 3</span>
-3:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
-4:     <span class="ruby-ivar">@host_nodes</span> = <span class="ruby-constant">ClusterNode</span>.<span class="ruby-identifier">getHostNodes</span>
-5:     <span class="ruby-ivar">@host_nodes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hn</span><span class="ruby-operator">|</span>
-6:       <span class="ruby-identifier">hn</span>.<span class="ruby-identifier">getVMs</span>
-7:     <span class="ruby-keyword kw">end</span>
-8:   <span class="ruby-keyword kw">end</span>
+   <span class="ruby-comment cmt"># File app/controllers/virtual_machines_controller.rb, line 4</span>
+4:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
+5:     <span class="ruby-ivar">@host_nodes</span> = <span class="ruby-constant">HostNode</span>.<span class="ruby-identifier">all</span>
+6:     <span class="ruby-ivar">@host_nodes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hn</span><span class="ruby-operator">|</span>
+7:       <span class="ruby-identifier">hn</span>.<span class="ruby-identifier">getVMs</span>
+8:     <span class="ruby-keyword kw">end</span>
+9:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000006" class="method-detail">
-        <a name="M000006"></a>
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
 
         <div class="method-heading">
-          <a href="#M000006" class="method-signature">
-          <span class="method-name">monitor</span><span class="method-args">()</span>
+          <a href="#M000027" class="method-signature">
+          <span class="method-name">qm_monitor</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-Create <a href="VirtualMachinesController.html#M000006">monitor</a> for
-specific QM VM
+Create monitor for specific QM VM
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000006-source">
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/virtual_machines_controller.rb, line 18</span>
-18:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">monitor</span>
-19:     <span class="ruby-ivar">@vm</span> = <span class="ruby-constant">VirtualMachine</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:host_ip</span>], <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
-20:     <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">create_vnc_console</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'qm'</span>
-21:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/virtual_machines_controller.rb, line 19</span>
+19:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">qm_monitor</span>
+20:     <span class="ruby-ivar">@vm</span> = <span class="ruby-constant">VirtualMachine</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:host_ip</span>], <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+21:     <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">create_vnc_console</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'qm'</span>
+22:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000007" class="method-detail">
-        <a name="M000007"></a>
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
 
         <div class="method-heading">
-          <a href="#M000007" class="method-signature">
+          <a href="#M000028" class="method-signature">
           <span class="method-name">start</span><span class="method-args">()</span>
           </a>
         </div>
@@ -185,26 +184,26 @@ specific QM VM
 Start up specific VM
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000007-source">
+            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000028-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/virtual_machines_controller.rb, line 24</span>
-24:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start</span>
-25:     <span class="ruby-ivar">@vm</span> = <span class="ruby-constant">VirtualMachine</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:host_ip</span>], <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
-26:     <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">start</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">stopped?</span>
-27:     <span class="ruby-identifier">flash</span>[<span class="ruby-identifier">:message</span>] = <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">output</span>
-28:     <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'index'</span>
-29:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/virtual_machines_controller.rb, line 25</span>
+25:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start</span>
+26:     <span class="ruby-ivar">@vm</span> = <span class="ruby-constant">VirtualMachine</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:host_ip</span>], <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+27:     <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">start</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">stopped?</span>
+28:     <span class="ruby-identifier">flash</span>[<span class="ruby-identifier">:message</span>] = <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">output</span>
+29:     <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'index'</span>
+30:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000008" class="method-detail">
-        <a name="M000008"></a>
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
 
         <div class="method-heading">
-          <a href="#M000008" class="method-signature">
+          <a href="#M000029" class="method-signature">
           <span class="method-name">stop</span><span class="method-args">()</span>
           </a>
         </div>
@@ -214,26 +213,26 @@ Start up specific VM
 Stop specific VM
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000008-source">
+            onclick="toggleCode('M000029-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000029-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/virtual_machines_controller.rb, line 32</span>
-32:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stop</span>
-33:     <span class="ruby-ivar">@vm</span> = <span class="ruby-constant">VirtualMachine</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:host_ip</span>], <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
-34:     <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">stop</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">running?</span>
-35:     <span class="ruby-identifier">flash</span>[<span class="ruby-identifier">:message</span>] = <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">output</span>
-36:     <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'index'</span>
-37:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/virtual_machines_controller.rb, line 33</span>
+33:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stop</span>
+34:     <span class="ruby-ivar">@vm</span> = <span class="ruby-constant">VirtualMachine</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:host_ip</span>], <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+35:     <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">stop</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">running?</span>
+36:     <span class="ruby-identifier">flash</span>[<span class="ruby-identifier">:message</span>] = <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">output</span>
+37:     <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'index'</span>
+38:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000005" class="method-detail">
-        <a name="M000005"></a>
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
 
         <div class="method-heading">
-          <a href="#M000005" class="method-signature">
+          <a href="#M000026" class="method-signature">
           <span class="method-name">vnc_client</span><span class="method-args">()</span>
           </a>
         </div>
@@ -243,15 +242,15 @@ Stop specific VM
 Create remote desktop for specific VM
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000005-source">
+            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000026-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/virtual_machines_controller.rb, line 11</span>
-11:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">vnc_client</span>
-12:     <span class="ruby-ivar">@vm</span> = <span class="ruby-constant">VirtualMachine</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:host_ip</span>], <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
-13:     <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">create_vnc_proxy</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'qm'</span>
-14:     <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">create_vnc_console</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'vz'</span>
-15:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/virtual_machines_controller.rb, line 12</span>
+12:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">vnc_client</span>
+13:     <span class="ruby-ivar">@vm</span> = <span class="ruby-constant">VirtualMachine</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:host_ip</span>], <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+14:     <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">create_vnc_proxy</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'qm'</span>
+15:     <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">create_vnc_console</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@vm</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'vz'</span>
+16:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
