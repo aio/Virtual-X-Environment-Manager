@@ -1,0 +1,28 @@
+<% form_for(@privilege) do |f| %>
+<%= f.error_messages %>
+
+<table>
+  <tr>
+    <td>Name</td><td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td>Resource Type</td><td><%= f.select :resource_type, Privilege.resource_types.collect {|key, desc| [desc, key] }, {:include_blank => 'None'} %></td>
+  </tr>
+  <tr>
+    <td>Resource ID</td><td><%= f.text_field :resource_id %></td>
+  </tr>
+  <tr>
+    <td>Readable</td><td><%= f.check_box :readable, {:checked => @privilege.readable } %></td>
+  </tr>
+  <tr>
+    <td>Writable</td><td><%= f.check_box :writable, {:checked => @privilege.writable } %></td>
+  </tr>
+  <tr>
+    <td>Executable</td><td><%= f.check_box :executable, {:checked => @privilege.executable } %></td>
+  </tr>
+  <tr>
+    <td>Deletable</td><td><%= f.check_box :deletable, {:checked => @privilege.deletable } %></td>
+  </tr>
+  <tr><td colspan="2"><%= f.submit "Save" %></td></tr>
+</table>
+<% end %>

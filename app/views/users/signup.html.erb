@@ -2,15 +2,15 @@
 
 <%= error_messages_for 'user' %><br/>
 
-<label for="user_login">用户名</label><br/>
+<label for="user_login">Username</label><br/>
 <%= text_field "user", "login", :size => 20 %><br/>
 
-<label for="user_password">密码</label><br/>
+<label for="user_password">Password</label><br/>
 <%= password_field "user", "password", :size => 20 %><br/>
 
-<label for="user_password_confirmation">重复</label><br/>
+<label for="user_password_confirmation">Password(confirmation)</label><br/>
 <%= password_field "user", "password_confirmation", :size => 20 %><br/>
 
-<%= submit_tag "创建用户" %>
+<%= submit_tag "Signup!" %>
 
 <% end %>

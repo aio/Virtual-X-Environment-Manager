@@ -7,20 +7,27 @@ class User < ActiveRecord::Base
                           :foreign_key => 'user_id'
 
   validates_length_of :login, :within => 3..40
-  validates_length_of :password, :within => 5..40
-  validates_presence_of :login, :password, :password_confirmation, :salt
+  validates_length_of :password, :within => 5..40, :unless => :updating_roles?
+  validates_presence_of :login, :salt
+  validates_presence_of :password, :password_confirmation, :unless => :updating_roles?
   validates_uniqueness_of :login
   validates_confirmation_of :password
   
   attr_protected :id, :salt
   
-  attr_accessor :password, :password_confirmation
+  attr_accessor :password, :password_confirmation, :updating_roles
+  
+  @updating_roles = false
   
   def self.authenticate(login, pass)
     u=find(:first, :conditions=>["login = ?", login])
     return nil if u.nil?
     return u if User.encrypt(pass, u.salt)==u.hashed_password
     nil
+  end
+  
+  def updating_roles?
+    @updating_roles
   end
   
   def password=(pass)

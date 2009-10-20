@@ -1,0 +1,32 @@
+<h1>Listing privileges</h1>
+
+<table>
+  <th>
+    <td>Name</td>
+    <td>Resource Type</td>
+    <td>Resource ID</td>
+    <td>Readable?</td>
+    <td>Writable?</td>
+    <td>Executable?</td>
+    <td>Deletable?</td>
+    <td colspan="2">Action</td>
+  </th>
+
+<% for privilege in @privileges %>
+  <tr>
+    <td><%= privilege.name %></td>
+    <td><%= privilege.resource_type %></td>
+    <td><%= privilege.resource_id %></td>
+    <td><%= privilege.readable %></td>
+    <td><%= privilege.writable %></td>
+    <td><%= privilege.executable %></td>
+    <td><%= privilege.deletable %></td>
+    <td><%= link_to 'Edit', edit_privilege_path(privilege) %></td>
+    <td><%= link_to 'Destroy', privilege, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New privilege', new_privilege_path %>

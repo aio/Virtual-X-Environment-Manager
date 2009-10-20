@@ -1,0 +1,15 @@
+<% form_tag :action=> 'update' do %>
+<%= error_messages_for 'user' %>
+<%= hidden_field "user", "id", :value => @user.id %>
+<table>
+  <tr>
+    <td>Name</td>
+    <td><%= @user.login %></td>
+  </tr>
+  <tr>
+    <td>Roles</td>
+    <td><%= swapselect :user, @user, :roles, Role.all.collect {|p| [p.name, p.id] } %></td>
+  </tr>
+  <%= submit_tag "Save" %>
+</table>
+<% end %>

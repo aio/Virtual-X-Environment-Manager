@@ -1765,3 +1765,13 @@ Migrating to RemoveColumnRoleIdFromUser (20091012021604)
   [4;35;1mSQL (0.000339)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'edward' AND "users".id <> 1) [0m
   [4;36;1mUser Update (0.001037)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-10-12 06:18:51', "salt" = 'GnNQanJKkg', "hashed_password" = '58d035b838b96b9a4ca1c6d2497ad90a530140d3' WHERE "id" = 1[0m
   [4;35;1mSQL (0.000345)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'edward' AND "users".id <> 1) [0m
+  [4;36;1mUser Load (0.001098)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.000619)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mPrivilege Load (0.001178)[0m   [0;1mSELECT * FROM "privileges" LIMIT 1[0m
+  [4;35;1mSQL (0.000385)[0m   [0mSELECT "name" FROM "privileges" WHERE ("privileges".name = 'control everything' AND "privileges".id <> 1) [0m
+  [4;36;1mPrivilege Update (0.000962)[0m   [0;1mUPDATE "privileges" SET "updated_at" = '2009-10-19 08:59:48', "resource_type" = 'EVERYTHING' WHERE "id" = 1[0m
+  [4;36;1mSQL (0.001128)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mPrivilege Load (0.001086)[0m   [0;1mSELECT * FROM "privileges" [0m

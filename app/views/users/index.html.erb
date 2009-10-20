@@ -1,0 +1,37 @@
+
+		<table>
+	  <thead>
+				
+				<tr>
+			  
+	    <th>Logon name</th>
+			  
+	    <th>Created At</th>
+			  
+			  <th>&nbsp;</th>
+		  </tr>
+	  </thead>
+	  <tbody>
+<% count = 1 %>  
+<% @users.each do |user|%>
+    <tr class="<%= count % 2 > 0 ? "odd" : "even" %>">
+      <td>
+        <%= user.login %>
+      </td>
+      <td>
+      	<%= user.created_at %>    	
+      </td>
+      <td>
+        <a href="/users/reset_password/<%= user.id %>">Reset Password</a>
+        <a href="/users/assign_roles/<%= user.id %>">Assign Roles</a>
+      	<a href="/users/destroy/<%= user.id %>" onclick="if (confirm('Are you sure to delete?')) {return true;} else {return false;}">Delete</a>    	
+      </td>
+    </tr>
+<% count += 1 %>
+<% end %> 
+    
+    
+  </tbody>
+  </table>
+  <a href="/users/signup">Signup a new user</a>
+
