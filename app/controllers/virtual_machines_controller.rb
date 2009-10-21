@@ -1,11 +1,13 @@
 class VirtualMachinesController < ApplicationController
   before_filter :login_required
+  before_filter :validate_request_required
   # List all the VMs on all the host nodes in the cluster
   def index
     @host_nodes = HostNode.all
     @host_nodes.each do |hn|
       hn.getVMs
     end
+    flash[:message] = "Logon as #{current_user.login}"
   end
 
   # Create remote desktop for specific VM
