@@ -23,11 +23,9 @@ ActiveRecord::Schema.define(:version => 20091012021604) do
     t.datetime "updated_at"
   end
 
-  create_table "role_privilege_link", :force => true do |t|
+  create_table "role_privilege_link", :id => false, :force => true do |t|
     t.integer  "role_id"
     t.integer  "privilege_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "roles", :force => true do |t|
@@ -37,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20091012021604) do
     t.datetime "updated_at"
   end
 
-  create_table "user_role_link", :force => true do |t|
+  create_table "user_role_link", :id => false, :force => true do |t|
     t.integer  "user_id"
     t.integer  "role_id"
     t.datetime "created_at"

@@ -35,7 +35,7 @@
 
 <body id=vnc style='margin:0px;' onLoad='javascript:wresize();'>
   <div class=lightcolbd style='border: 1px solid;'>
-    <APPLET id=vncapp CODE='VncViewer.class' ARCHIVE='/VncViewer.jar' width=640 height=400 vspace=0 hspace=0>
+    <APPLET id=vncapp CODE='VncViewer.class' ARCHIVE='/javascripts/VncViewer.jar' width=640 height=400 vspace=0 hspace=0>
           <param name=PORT value='<%= @vm.vnc_port %>'>
           <param name=PASSWORD value='<%= @vm.vnc_password %>'>
           <param name='Show Controls' value='Yes'>
