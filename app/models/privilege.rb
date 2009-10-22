@@ -6,12 +6,12 @@ class Privilege < ActiveRecord::Base
   @@resource_types = {
                       '*' => 'Everything (Only for admin)',
                       '/' => 'Index page', 
-                      '/virtual_machines' => 'Virtual Machine',
-                      '/host_nodes' => 'Standalone server of node of cluster',
-                      '/storages' => 'Storage Pool',
-                      '/users' => 'Users',
-                      '/roles' => 'Roles',
-                      '/privileges' => 'Privileges'
+                      'virtual_machines' => 'Virtual Machine',
+                      'host_nodes' => 'Standalone server of node of cluster',
+                      'storages' => 'Storage Pool',
+                      'users' => 'Users',
+                      'roles' => 'Roles',
+                      'privileges' => 'Privileges'
                      }
   @@resource_actions = {
                          :readable => [:index, :list, :show],
@@ -27,23 +27,30 @@ class Privilege < ActiveRecord::Base
     @@resource_actions
   end
   
-  def valid_action?(action)
-    action_type = nil
-    @@resource_actions.keys.each { |key|
-      if @@resource_actions[key].include? action
-        action_type = key
-        break 
+  def valid_request?(requested_resource, requested_id, requested_action)
+    # for admin passthrough
+    return true if resource_type == '*' and readable and writable and executable and deletable
+    
+    if requested_resource == resource_type and requested_id == resource_id
+      action_type = nil
+      @@resource_actions.keys.each { |key|
+        if @@resource_actions[key].include? requested_action
+          action_type = key
+          break 
+        end
+      }
+      case action_type
+      when :readable
+        return readable
+      when :writable
+        return writable
+      when :executable
+        return executable
+      when :deletable
+        return deletable
+      else
+        return false
       end
-    }
-    case action_type
-    when :readable
-      return readable
-    when :writable
-      return writable
-    when :executable
-      return executable
-    when :deletable
-      return deletable
     else
       return false
     end
