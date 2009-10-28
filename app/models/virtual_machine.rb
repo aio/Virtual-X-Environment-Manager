@@ -76,8 +76,8 @@ class VirtualMachine
       prefix = "#{PveHelper::CMD_SSH_EXEC} #{host_ip} " 
     end
     vm = nil
-    vm = VirtualMachine.getVZList(host_ip, prefix + PveHelper::CMD_VZ_LISTALL + " | grep #{id}")[0]
-    vm = VirtualMachine.getQMList(host_ip, prefix + PveHelper::CMD_QM_LISTALL + " | grep #{id}")[0] if vm == nil
+    vm = VirtualMachine.getVZList(host_ip, prefix + PveHelper::CMD_VZ_LISTALL + "| sed -r 's/^\s*//' | grep '^#{id}'")[0]
+    vm = VirtualMachine.getQMList(host_ip, prefix + PveHelper::CMD_QM_LISTALL + "| sed -r 's/^\s*//' | grep '^#{id}'")[0] if vm == nil
 
     return vm
   end

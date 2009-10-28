@@ -13,6 +13,8 @@ module PveHelper
   CMD_CLUSTER_LIST = "/usr/bin/pveca -l"
   CMD_PVE_VER = "/usr/bin/pveversion"
   CMD_CLUSTER_MYINFO = "/usr/bin/pveca -i"
+  CMD_VZ_QUERY_BY_ID = "/usr/sbin/vzlist"
+  CMD_QM_QUERY_BY_ID = "/usr/sbin/qm status"
   
   def exec_result(cmdstr)
     IO.popen(cmdstr) do |f|
